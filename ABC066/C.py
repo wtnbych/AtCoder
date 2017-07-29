@@ -1,14 +1,17 @@
 n = int(input())
-a = list(input().split())
-b = ""
+a = list(map(int, input().split()))
+b = list()
+c = list()
 for i in range(n):
     if(i==0):
-        b = str(a[i])
+        b.append(a[i])
     elif(i%2==1):
-        b = str(b) + str(a[i])
+        b.append(a[i])
     else:
-        b = str(a[i]) + str(b)
+        c.append(a[i])
+c.reverse()
+c = c + b
 if(i%2==1):
-    b = b[::-1]
-for i in range(n):
-    print(b[i],end=' ')
+    c.reverse()
+for i in c:
+    print(i,end=' ')
